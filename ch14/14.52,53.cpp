@@ -12,9 +12,8 @@ class SmallInt
 private:
 	int val;
 public:
-	SmallInt(int a = 0){ val = a; };
-	operator int()const{ return val; }
-
+	SmallInt(int a = 0){ val = a; };//int型的构造函数	
+	operator int()const{ return val; }//转向int型的类型转换函数
 };
 struct Longdouble
 {
@@ -26,9 +25,11 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	SmallInt si(1);
 	Longdouble ld;
+	//14.52
 	ld = si + ld;//没有相关函数，候选函数为1,3,内置+,
 	ld = ld + si;//候选函数为2,3,内置函数. 使用2
 	ld = ld + 2;//使用3
+	//14.53
 	double d = si + 3.14;//二义性 ：内置+运算符（si化成int），函数1（int可以化为SmallInt）
 	int i = si + 1;//二义性
 
