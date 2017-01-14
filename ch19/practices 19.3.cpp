@@ -1,8 +1,8 @@
-class A{ public:A() = default;virtual ~A(){} };
+	class A{ public:A() = default;virtual ~A(){} };
 	class B :public A{ public:B() = default; ~B(){} };
 	class C :public A{ public:C() = default; ~C(){} };
 	class D :public B, public A{ public:D() = default; ~D(){} };
-	//dynamic_cast 只能从派生类到基类的指针或者引用类型转换
+	
 void test()
 	{
 		A *pa = new D;
@@ -16,4 +16,4 @@ void test()
 		//NULL
 		B* se = dynamic_cast<B*>(pa);
 		//right
-	}
+	}//dynamic_cast 只能从派生类到基类的指针或者引用类型转换
